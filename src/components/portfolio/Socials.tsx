@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
-import { Linkedin, Github, Facebook, Briefcase, Globe } from "lucide-react";
+import { Linkedin, Github, Facebook, Globe } from "lucide-react";
 import { Section } from "./Section";
 
 const socials = [
   { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Briefcase, label: "Upwork", href: "#" },
   { icon: Globe, label: "Freelancer", href: "#" },
   { icon: Facebook, label: "Facebook", href: "#" },
   { icon: Github, label: "GitHub", href: "#" },
@@ -18,7 +17,7 @@ export function Socials() {
       title="On every major platform"
       subtitle="Connect, follow, or hire — wherever you prefer."
     >
-      <div className="flex flex-wrap justify-center gap-5">
+      <div className="flex flex-wrap items-center justify-center gap-5">
         {socials.map((s, i) => (
           <motion.a
             key={s.label}

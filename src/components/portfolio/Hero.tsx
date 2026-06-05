@@ -113,23 +113,6 @@ export function Hero() {
               </div>
             </div>
 
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="hidden sm:flex absolute -left-6 top-10 glass rounded-2xl px-3 py-2 items-center gap-2 text-xs"
-            >
-              <span className="h-2 w-2 rounded-full bg-primary" />
-              <span className="font-mono text-primary/90">AI · Python</span>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="hidden sm:flex absolute -right-4 bottom-10 glass rounded-2xl px-3 py-2 items-center gap-2 text-xs"
-            >
-              <Sparkles className="h-3.5 w-3.5 text-primary" />
-              <span className="font-medium">5+ yrs shipping</span>
-            </motion.div>
           </div>
         </motion.div>
       </div>

@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
-import { Linkedin, Github, Facebook, Globe } from "lucide-react";
 import { Section } from "./Section";
 
 const socials = [
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Globe, label: "Freelancer", href: "#" },
-  { icon: Facebook, label: "Facebook", href: "#" },
-  { icon: Github, label: "GitHub", href: "#" },
+  { slug: "linkedin", label: "LinkedIn", href: "#" },
+  { slug: "freelancer", label: "Freelancer", href: "#" },
+  { slug: "facebook", label: "Facebook", href: "#" },
+  { slug: "github", label: "GitHub", href: "#" },
 ];
 
 export function Socials() {
@@ -31,7 +30,12 @@ export function Socials() {
             whileHover={{ y: -6 }}
             className="group relative glass glass-hover h-20 w-20 rounded-2xl flex items-center justify-center"
           >
-            <s.icon className="h-7 w-7 text-foreground group-hover:text-primary transition-colors" />
+            <img
+              src={`https://cdn.simpleicons.org/${s.slug}`}
+              alt={s.label}
+              loading="lazy"
+              className="h-8 w-8 transition-transform group-hover:scale-110"
+            />
             <span className="absolute -bottom-9 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
               {s.label}
             </span>

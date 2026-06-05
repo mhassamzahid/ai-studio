@@ -77,11 +77,11 @@
   --card-foreground: oklch(0.18 0.02 265);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.02 265);
-  /* Indigo #6366F1 */
+  /* Indigo #4F46E5 \u2014 single brand hue */
   --primary: oklch(0.55 0.2 268);
   --primary-foreground: oklch(0.99 0 0);
-  /* Soft violet accent */
-  --secondary: oklch(0.5 0.22 295);
+  /* Deep indigo tone (same hue, darker) for cohesive gradients */
+  --secondary: oklch(0.38 0.16 268);
   --secondary-foreground: oklch(0.99 0 0);
   --muted: oklch(0.96 0.005 265);
   --muted-foreground: oklch(0.45 0.02 260);
@@ -95,7 +95,7 @@
   --input: oklch(0.18 0.02 265 / 0.06);
   --ring: oklch(0.55 0.2 268 / 0.4);
   --chart-1: oklch(0.55 0.2 268);
-  --chart-2: oklch(0.5 0.22 295);
+  --chart-2: oklch(0.38 0.16 268);
   --chart-3: oklch(0.7 0.18 220);
   --chart-4: oklch(0.8 0.15 90);
   --chart-5: oklch(0.7 0.2 30);
@@ -157,8 +157,8 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     background-image:
-      radial-gradient(circle at 15% 5%, oklch(0.55 0.2 268 / 0.10), transparent 45%),
-      radial-gradient(circle at 90% 90%, oklch(0.5 0.22 295 / 0.08), transparent 50%);
+      radial-gradient(circle at 15% 5%, oklch(0.55 0.2 268 / 0.08), transparent 45%),
+      radial-gradient(circle at 90% 90%, oklch(0.55 0.2 268 / 0.06), transparent 50%);
     background-attachment: fixed;
   }
 }
@@ -185,13 +185,13 @@
     color: transparent;
   }
   .text-gradient-accent {
-    background: linear-gradient(135deg, oklch(0.55 0.2 268) 0%, oklch(0.5 0.22 295) 100%);
+    background: linear-gradient(135deg, oklch(0.55 0.2 268) 0%, oklch(0.38 0.16 268) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .glow-mint { box-shadow: 0 10px 40px -10px oklch(0.55 0.2 268 / 0.45); }
-  .glow-violet { box-shadow: 0 10px 40px -10px oklch(0.5 0.22 295 / 0.45); }
+  .glow-violet { box-shadow: 0 10px 40px -10px oklch(0.38 0.16 268 / 0.45); }
   .grid-bg {
     background-image:
       linear-gradient(oklch(0.18 0.02 265 / 0.06) 1px, transparent 1px),

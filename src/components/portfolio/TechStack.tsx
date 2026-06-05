@@ -20,9 +20,9 @@ export function TechStack() {
         {tools.map((t, i) => (
           <motion.div
             key={t}
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 1, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0 }}
             transition={{ duration: 0.4, delay: (i % 10) * 0.04 }}
             className="glass glass-hover rounded-2xl py-6 px-4 flex flex-col items-center justify-center gap-2 animate-float"
             style={{ animationDelay: `${(i % 6) * 0.6}s` }}

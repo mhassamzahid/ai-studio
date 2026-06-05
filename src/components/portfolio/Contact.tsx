@@ -21,9 +21,9 @@ export function Contact() {
     >
       <motion.form
         onSubmit={onSubmit}
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 1, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0 }}
         transition={{ duration: 0.6 }}
         className="glass rounded-3xl p-8 md:p-10 max-w-2xl mx-auto"
       >

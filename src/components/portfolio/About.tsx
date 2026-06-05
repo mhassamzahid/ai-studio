@@ -23,9 +23,9 @@ export function About() {
     >
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
+          initial={{ opacity: 1, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.6 }}
           className="glass glass-hover rounded-3xl p-8"
         >
@@ -37,9 +37,9 @@ export function About() {
           </p>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
+          initial={{ opacity: 1, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.6 }}
           className="glass glass-hover rounded-3xl p-8"
         >
@@ -61,9 +61,9 @@ export function About() {
         {stats.map((s, i) => (
           <motion.div
             key={s.label}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0 }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
             className="glass glass-hover rounded-2xl p-6 text-center"
           >

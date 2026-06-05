@@ -27,9 +27,9 @@ export function Services() {
         {services.map((s, i) => (
           <motion.div
             key={s.title}
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 1, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0 }}
             transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
             className="group glass glass-hover rounded-3xl p-6 relative overflow-hidden"
           >

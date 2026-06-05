@@ -44,7 +44,7 @@ function BrandPill({ brand }: { brand: Brand }) {
   return (
     <div className="group shrink-0 mx-3 inline-flex items-center gap-3 rounded-2xl border border-border bg-card/60 backdrop-blur-md px-5 py-3 transition-all hover:border-primary/40 hover:bg-card">
       <img
-        src={`https://cdn.simpleicons.org/${brand.slug}/3B82F6`}
+        src={`https://cdn.simpleicons.org/${brand.slug}`}
         alt={brand.name}
         loading="lazy"
         className="h-6 w-6 transition-transform group-hover:scale-110"

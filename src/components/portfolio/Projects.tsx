@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { Github } from "lucide-react";
 import { Section } from "./Section";
 
 const projects = [
@@ -78,18 +78,12 @@ export function Projects() {
                   </span>
                 ))}
               </div>
-              <div className="mt-5 flex gap-2">
+              <div className="mt-5">
                 <a
                   href="#"
-                  className="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-medium px-3 py-2 rounded-lg bg-primary text-primary-foreground hover:glow-mint transition-shadow"
+                  className="w-full inline-flex items-center justify-center gap-2 text-sm font-medium px-4 py-2.5 rounded-lg glass glass-hover"
                 >
-                  <ExternalLink className="h-3.5 w-3.5" /> Live Demo
-                </a>
-                <a
-                  href="#"
-                  className="flex-1 inline-flex items-center justify-center gap-1.5 text-xs font-medium px-3 py-2 rounded-lg glass glass-hover"
-                >
-                  <Github className="h-3.5 w-3.5" /> GitHub
+                  <Github className="h-4 w-4" /> View on GitHub
                 </a>
               </div>
             </div>

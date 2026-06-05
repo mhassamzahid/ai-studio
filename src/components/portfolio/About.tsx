@@ -13,13 +13,6 @@ const expertise: { name: string; slug: string }[] = [
   { name: "Voice AI", slug: "elevenlabs" },
 ];
 
-const stats = [
-  { value: "120+", label: "Projects Completed" },
-  { value: "300+", label: "Automations Built" },
-  { value: "80+", label: "APIs Integrated" },
-  { value: "100%", label: "Client Satisfaction" },
-];
-
 export function About() {
   return (
     <Section
@@ -62,24 +55,6 @@ export function About() {
             ))}
           </div>
         </motion.div>
-      </div>
-
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {stats.map((s, i) => (
-          <motion.div
-            key={s.label}
-            initial={{ opacity: 1, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="glass glass-hover rounded-2xl p-6 text-center"
-          >
-            <div className="text-3xl md:text-4xl font-extrabold text-gradient">{s.value}</div>
-            <div className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">
-              {s.label}
-            </div>
-          </motion.div>
-        ))}
       </div>
     </Section>
   );

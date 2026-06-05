@@ -32,16 +32,16 @@ export function Navbar() {
       <nav
         className={`mx-auto max-w-6xl flex items-center justify-between rounded-full pl-4 pr-2 py-2 transition-all duration-300 border ${
           scrolled
-            ? "bg-foreground/95 backdrop-blur-xl border-primary/20 shadow-[0_8px_30px_-12px_rgba(59,130,246,0.35)]"
-            : "bg-foreground/90 backdrop-blur-md border-primary/10"
+            ? "bg-white backdrop-blur-xl border-background/20 shadow-[0_8px_30px_-12px_rgba(11,18,32,0.35)]"
+            : "bg-white/95 backdrop-blur-md border-background/10"
         }`}
       >
         <a href="#top" className="flex items-center gap-2.5 pl-1">
-          <span className="relative h-7 w-7 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-[11px] font-bold text-primary-foreground">
-            <span className="absolute inset-0 rounded-lg blur-md bg-primary/50 -z-10" />
-            YN
+          <span className="relative h-7 w-7 rounded-lg bg-background flex items-center justify-center text-[11px] font-bold text-white">
+            <span className="absolute inset-0 rounded-lg blur-md bg-background/50 -z-10" />
+            AM
           </span>
-          <span className="font-semibold tracking-tight text-[15px] text-primary">Your Name</span>
+          <span className="font-semibold tracking-tight text-[15px] text-background">Abdul Moiz</span>
         </a>
 
         <ul className="hidden md:flex items-center gap-1 text-sm">
@@ -49,7 +49,7 @@ export function Navbar() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="px-3.5 py-2 rounded-full text-primary/70 hover:text-primary hover:bg-primary/10 transition-colors font-medium"
+                className="px-3.5 py-2 rounded-full text-background/70 hover:text-background hover:bg-background/10 transition-colors font-medium"
               >
                 {l.label}
               </a>
@@ -60,14 +60,14 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <a
             href="#contact"
-            className="hidden md:inline-flex items-center text-sm font-medium px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-secondary transition-colors"
+            className="hidden md:inline-flex items-center text-sm font-medium px-4 py-2 rounded-full bg-background text-white hover:bg-background/90 transition-colors"
           >
             Hire me
           </a>
           <button
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden h-9 w-9 inline-flex items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-primary"
+            className="md:hidden h-9 w-9 inline-flex items-center justify-center rounded-full border border-background/20 bg-background/10 text-background"
           >
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
@@ -81,7 +81,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden mx-auto max-w-6xl mt-2 rounded-2xl border border-primary/20 bg-foreground/95 backdrop-blur-xl p-2"
+            className="md:hidden mx-auto max-w-6xl mt-2 rounded-2xl border border-background/20 bg-white backdrop-blur-xl p-2"
           >
             <ul className="flex flex-col">
               {links.map((l) => (
@@ -89,7 +89,7 @@ export function Navbar() {
                   <a
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="block px-4 py-3 rounded-xl text-sm font-medium text-primary/70 hover:text-primary hover:bg-primary/10"
+                    className="block px-4 py-3 rounded-xl text-sm font-medium text-background/70 hover:text-background hover:bg-background/10"
                   >
                     {l.label}
                   </a>
@@ -99,7 +99,7 @@ export function Navbar() {
                 <a
                   href="#contact"
                   onClick={() => setOpen(false)}
-                  className="block mt-1 px-4 py-3 rounded-xl text-sm font-medium text-center bg-primary text-primary-foreground"
+                  className="block mt-1 px-4 py-3 rounded-xl text-sm font-medium text-center bg-background text-white"
                 >
                   Hire me
                 </a>

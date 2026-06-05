@@ -53,9 +53,9 @@ export function Projects() {
         {projects.map((p, i) => (
           <motion.article
             key={p.title}
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 1, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0 }}
             transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
             className="glass glass-hover rounded-3xl overflow-hidden flex flex-col"
           >

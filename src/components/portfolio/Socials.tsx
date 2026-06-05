@@ -25,9 +25,9 @@ export function Socials() {
             href={s.href}
             target="_blank"
             rel="noreferrer"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0 }}
             transition={{ duration: 0.4, delay: i * 0.08 }}
             whileHover={{ y: -6 }}
             className="group relative glass glass-hover h-20 w-20 rounded-2xl flex items-center justify-center"

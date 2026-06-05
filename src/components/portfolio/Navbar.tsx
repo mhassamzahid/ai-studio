@@ -1,4 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { href: "#about", label: "About" },
@@ -10,34 +12,102 @@ const links = [
 ];
 
 export function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <motion.header
-      initial={{ y: -30, opacity: 0 }}
+      initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="fixed top-4 left-1/2 z-50 -translate-x-1/2 w-[min(1100px,92vw)]"
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="fixed top-0 inset-x-0 z-50 px-4 pt-4"
     >
-      <nav className="glass rounded-2xl px-5 py-3 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2">
-          <span className="h-7 w-7 rounded-lg bg-gradient-to-br from-primary to-secondary glow-mint" />
-          <span className="font-bold tracking-tight">Your Name</span>
+      <nav
+        className={`mx-auto max-w-6xl flex items-center justify-between rounded-full pl-4 pr-2 py-2 transition-all duration-300 border ${
+          scrolled
+            ? "bg-background/70 backdrop-blur-xl border-border shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)]"
+            : "bg-background/30 backdrop-blur-md border-transparent"
+        }`}
+      >
+        <a href="#top" className="flex items-center gap-2.5 pl-1">
+          <span className="relative h-7 w-7 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-[11px] font-bold text-primary-foreground">
+            <span className="absolute inset-0 rounded-lg blur-md bg-primary/50 -z-10" />
+            YN
+          </span>
+          <span className="font-semibold tracking-tight text-[15px]">Your Name</span>
         </a>
-        <ul className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
+
+        <ul className="hidden md:flex items-center gap-1 text-sm">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="hover:text-foreground transition-colors">
+              <a
+                href={l.href}
+                className="px-3.5 py-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-white/5 transition-colors"
+              >
                 {l.label}
               </a>
             </li>
           ))}
         </ul>
-        <a
-          href="#contact"
-          className="text-sm font-medium px-4 py-2 rounded-xl bg-primary text-primary-foreground hover:glow-mint transition-shadow"
-        >
-          Hire me
-        </a>
+
+        <div className="flex items-center gap-2">
+          <a
+            href="#contact"
+            className="hidden md:inline-flex items-center text-sm font-medium px-4 py-2 rounded-full bg-foreground text-background hover:bg-foreground/90 transition-colors"
+          >
+            Hire me
+          </a>
+          <button
+            aria-label="Toggle menu"
+            onClick={() => setOpen((v) => !v)}
+            className="md:hidden h-9 w-9 inline-flex items-center justify-center rounded-full border border-border bg-white/5 text-foreground"
+          >
+            {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+          </button>
+        </div>
       </nav>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden mx-auto max-w-6xl mt-2 rounded-2xl border border-border bg-background/90 backdrop-blur-xl p-2"
+          >
+            <ul className="flex flex-col">
+              {links.map((l) => (
+                <li key={l.href}>
+                  <a
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    className="block px-4 py-3 rounded-xl text-sm text-muted-foreground hover:text-foreground hover:bg-white/5"
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a
+                  href="#contact"
+                  onClick={() => setOpen(false)}
+                  className="block mt-1 px-4 py-3 rounded-xl text-sm font-medium text-center bg-foreground text-background"
+                >
+                  Hire me
+                </a>
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }

@@ -1,9 +1,16 @@
 import { motion } from "framer-motion";
 import { Section } from "./Section";
 
-const expertise = [
-  "AI Automation", "n8n", "GoHighLevel", "Make.com",
-  "OpenAI / ChatGPT API", "FastAPI", "Django", "AI Agents", "Voice AI",
+const expertise: { name: string; slug: string }[] = [
+  { name: "AI Automation", slug: "openaigym" },
+  { name: "n8n", slug: "n8n" },
+  { name: "GoHighLevel", slug: "gohighlevel" },
+  { name: "Make.com", slug: "make" },
+  { name: "OpenAI / ChatGPT API", slug: "openai" },
+  { name: "FastAPI", slug: "fastapi" },
+  { name: "Django", slug: "django" },
+  { name: "AI Agents", slug: "probot" },
+  { name: "Voice AI", slug: "elevenlabs" },
 ];
 
 const stats = [
@@ -47,10 +54,16 @@ export function About() {
           <div className="flex flex-wrap gap-2">
             {expertise.map((e) => (
               <span
-                key={e}
-                className="text-xs px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary"
+                key={e.name}
+                className="inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary"
               >
-                {e}
+                <img
+                  src={`https://cdn.simpleicons.org/${e.slug}`}
+                  alt=""
+                  loading="lazy"
+                  className="h-4 w-4"
+                />
+                {e.name}
               </span>
             ))}
           </div>

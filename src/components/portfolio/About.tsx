@@ -48,8 +48,16 @@ export function About() {
             {expertise.map((e) => (
               <span
                 key={e.name}
-                className="text-xs px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary"
+                className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary"
               >
+                <img
+                  src={`https://cdn.simpleicons.org/${e.slug}`}
+                  alt=""
+                  width={14}
+                  height={14}
+                  className="h-3.5 w-3.5"
+                  loading="lazy"
+                />
                 {e.name}
               </span>
             ))}

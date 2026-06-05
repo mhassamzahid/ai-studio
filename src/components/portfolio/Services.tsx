@@ -5,14 +5,14 @@ import {
 import { Section } from "./Section";
 
 const services = [
-  { icon: Bot, title: "AI Automation Systems", desc: "End-to-end automation pipelines that replace repetitive work with reliable AI workflows." },
-  { icon: MessageSquare, title: "AI Agents & Chatbots", desc: "Custom GPT-powered agents trained on your data, integrated with your stack." },
-  { icon: Server, title: "Backend API Development", desc: "Production-grade FastAPI and Django services with auth, queues, and observability." },
-  { icon: Users, title: "CRM & Lead Automation", desc: "GoHighLevel, HubSpot, and custom CRMs — automated lead nurture and routing." },
-  { icon: Mic, title: "Voice AI Agents", desc: "Inbound and outbound voice agents using VAPI, Retell, ElevenLabs, and Twilio." },
-  { icon: Workflow, title: "Workflow Integrations", desc: "n8n, Make.com and Zapier integrations connecting hundreds of SaaS tools." },
-  { icon: Database, title: "RAG & Knowledge Bases", desc: "Vector search systems with LangChain and Pinecone for accurate, sourced answers." },
-  { icon: Cloud, title: "DevOps & Cloud Deployment", desc: "Dockerized deployments on AWS, GCP, and Fly with CI/CD and zero-downtime updates." },
+  { icon: Bot, color: "#A78BFA", title: "AI Automation Systems", desc: "End-to-end automation pipelines that replace repetitive work with reliable AI workflows." },
+  { icon: MessageSquare, color: "#22D3EE", title: "AI Agents & Chatbots", desc: "Custom GPT-powered agents trained on your data, integrated with your stack." },
+  { icon: Server, color: "#34D399", title: "Backend API Development", desc: "Production-grade FastAPI and Django services with auth, queues, and observability." },
+  { icon: Users, color: "#FB7185", title: "CRM & Lead Automation", desc: "GoHighLevel, HubSpot, and custom CRMs — automated lead nurture and routing." },
+  { icon: Mic, color: "#F472B6", title: "Voice AI Agents", desc: "Inbound and outbound voice agents using VAPI, Retell, ElevenLabs, and Twilio." },
+  { icon: Workflow, color: "#FBBF24", title: "Workflow Integrations", desc: "n8n, Make.com and Zapier integrations connecting hundreds of SaaS tools." },
+  { icon: Database, color: "#60A5FA", title: "RAG & Knowledge Bases", desc: "Vector search systems with LangChain and Pinecone for accurate, sourced answers." },
+  { icon: Cloud, color: "#F97316", title: "DevOps & Cloud Deployment", desc: "Dockerized deployments on AWS, GCP, and Fly with CI/CD and zero-downtime updates." },
 ];
 
 export function Services() {
@@ -33,10 +33,19 @@ export function Services() {
             transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
             className="group glass glass-hover rounded-3xl p-6 relative overflow-hidden"
           >
-            <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-primary/15 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div
+              className="absolute -top-12 -right-12 h-32 w-32 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+              style={{ background: `${s.color}33` }}
+            />
             <div className="relative">
-              <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30 flex items-center justify-center mb-5">
-                <s.icon className="h-5 w-5 text-primary" />
+              <div
+                className="h-11 w-11 rounded-xl flex items-center justify-center mb-5 border"
+                style={{
+                  background: `linear-gradient(135deg, ${s.color}33, ${s.color}1a)`,
+                  borderColor: `${s.color}55`,
+                }}
+              >
+                <s.icon className="h-5 w-5" style={{ color: s.color }} />
               </div>
               <h3 className="font-semibold text-lg mb-2">{s.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>

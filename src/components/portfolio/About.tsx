@@ -21,7 +21,7 @@ export function About() {
       title="Engineering intelligent systems that scale"
       subtitle="I help startups, agencies, and operators turn manual processes into autonomous, AI-powered workflows — from custom agents to production-grade Python backends."
     >
-      <div className="grid md:grid-cols-2 gap-8 mb-12">
+      <div className="grid md:grid-cols-2 gap-8">
         <motion.div
           initial={{ opacity: 1, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}

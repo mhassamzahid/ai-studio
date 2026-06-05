@@ -1,5 +1,3 @@
-import { Section } from "./Section";
-
 type Brand = { name: string; slug: string };
 
 // Languages, frameworks, databases, infra

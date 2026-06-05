@@ -2,6 +2,22 @@ import { motion } from "framer-motion";
 import { Github } from "lucide-react";
 import { Section } from "./Section";
 
+const stackIcons: Record<string, string> = {
+  OpenAI: "openai",
+  FastAPI: "fastapi",
+  PostgreSQL: "postgresql",
+  LangChain: "langchain",
+  Pinecone: "pinecone",
+  Django: "django",
+  Redis: "redis",
+  n8n: "n8n",
+  Make: "make",
+  Twilio: "twilio",
+  ElevenLabs: "elevenlabs",
+  Docker: "docker",
+  AWS: "amazonwebservices",
+};
+
 const projects = [
   {
     title: "AI Lead Qualification Agent",
@@ -69,14 +85,27 @@ export function Projects() {
               <h3 className="font-semibold text-lg">{p.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">{p.desc}</p>
               <div className="mt-4 flex flex-wrap gap-1.5">
-                {p.stack.map((s) => (
-                  <span
-                    key={s}
-                    className="text-[11px] px-2 py-0.5 rounded-md border border-border bg-muted/40 text-muted-foreground"
-                  >
-                    {s}
-                  </span>
-                ))}
+                {p.stack.map((s) => {
+                  const slug = stackIcons[s];
+                  return (
+                    <span
+                      key={s}
+                      className="inline-flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-md border border-border bg-muted/40 text-muted-foreground"
+                    >
+                      {slug ? (
+                        <img
+                          src={`https://cdn.simpleicons.org/${slug}`}
+                          alt=""
+                          loading="lazy"
+                          className="h-3 w-3"
+                        />
+                      ) : (
+                        <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                      )}
+                      {s}
+                    </span>
+                  );
+                })}
               </div>
               <div className="mt-5">
                 <a

@@ -109,7 +109,7 @@ export function Hero() {
                   alt="AbdulRauf — AI Automation Expert and Python Backend Developer"
                   width={880}
                   height={880}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover object-top"
                 />
               </div>
             </div>

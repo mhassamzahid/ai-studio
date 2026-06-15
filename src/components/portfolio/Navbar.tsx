@@ -73,7 +73,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <a
-            href="https://wa.me/"
+            href="https://wa.me/923152526525"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-background text-white hover:bg-background/90 transition-colors"
@@ -124,7 +124,7 @@ export function Navbar() {
               ))}
               <li>
                 <a
-                  href="https://wa.me/"
+                  href="https://wa.me/923152526525"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}

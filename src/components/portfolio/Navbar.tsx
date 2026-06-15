@@ -41,7 +41,7 @@ export function Navbar() {
             <span className="absolute inset-0 rounded-lg blur-md bg-background/50 -z-10" />
             AM
           </span>
-          <span className="font-semibold tracking-tight text-[15px] text-background">Abdul Moiz</span>
+          <span className="font-semibold tracking-tight text-[15px] text-background">AbdulRauf</span>
         </a>
 
         <ul className="hidden md:flex items-center gap-1 text-sm">

@@ -86,10 +86,12 @@ export function Hero() {
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="#contact"
+              href="https://wa.me/923152526525"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl glass glass-hover font-semibold"
             >
-              <WhatsAppIcon className="h-4 w-4 text-primary" />
+              <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
               Contact Me
             </a>
           </motion.div>

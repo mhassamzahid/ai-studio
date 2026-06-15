@@ -128,7 +128,7 @@ export function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
-                  className="mt-1 px-4 py-3 rounded-xl text-sm font-medium bg-background text-white flex items-center justify-center gap-2"
+                  className="mt-1 px-4 py-3 rounded-xl text-sm font-medium bg-[#25D366] text-white flex items-center justify-center gap-2"
                 >
                   <WhatsAppIcon className="h-4 w-4" />
                   Chat on WhatsApp

@@ -8,13 +8,13 @@ export function Footer() {
           © {new Date().getFullYear()} Your Name. Crafted with precision.
         </div>
         <div className="flex items-center gap-3">
-          <a href="#" aria-label="LinkedIn" className="glass glass-hover h-10 w-10 rounded-xl flex items-center justify-center">
+          <a href="https://www.linkedin.com/in/abdulrauf-siddiqui/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="glass glass-hover h-10 w-10 rounded-xl flex items-center justify-center">
             <Linkedin className="h-4 w-4" />
           </a>
-          <a href="#" aria-label="GitHub" className="glass glass-hover h-10 w-10 rounded-xl flex items-center justify-center">
+          <a href="https://github.com/AbdulRauf-Sidd" target="_blank" rel="noreferrer" aria-label="GitHub" className="glass glass-hover h-10 w-10 rounded-xl flex items-center justify-center">
             <Github className="h-4 w-4" />
           </a>
-          <a href="#" aria-label="Upwork" className="glass glass-hover h-10 w-10 rounded-xl flex items-center justify-center">
+          <a href="https://www.upwork.com/freelancers/~01d7aeb11a42dfd054" target="_blank" rel="noreferrer" aria-label="Upwork" className="glass glass-hover h-10 w-10 rounded-xl flex items-center justify-center">
             <Briefcase className="h-4 w-4" />
           </a>
           <a

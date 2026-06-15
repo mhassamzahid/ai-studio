@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
-import profileImg from "@/assets/abdul-moiz.jpg";
+import profileAsset from "@/assets/abdulrauf.jpg.asset.json";
+const profileImg = profileAsset.url;
 
 const floatingIcons = [
   { label: "AI", x: "8%", y: "20%", d: 0 },
@@ -51,7 +52,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.05] text-gradient"
           >
-            Hi, I'm Abdul Moiz
+            Hi, I'm AbdulRauf
             <span className="block mt-3 text-gradient-accent">
               AI Automation Expert
             </span>
@@ -105,7 +106,7 @@ export function Hero() {
               <div className="h-full w-full rounded-[1.9rem] bg-background overflow-hidden">
                 <img
                   src={profileImg}
-                  alt="Abdul Moiz — AI Automation Expert and Python Backend Developer"
+                  alt="AbdulRauf — AI Automation Expert and Python Backend Developer"
                   width={880}
                   height={880}
                   className="h-full w-full object-cover"

@@ -88,7 +88,7 @@ export function Hero() {
               href="#contact"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl glass glass-hover font-semibold"
             >
-              <Sparkles className="h-4 w-4 text-primary" />
+              <WhatsAppIcon className="h-4 w-4 text-primary" />
               Contact Me
             </a>
           </motion.div>

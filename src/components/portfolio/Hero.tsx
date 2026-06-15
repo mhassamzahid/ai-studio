@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 import profileAsset from "@/assets/abdulrauf.jpg.asset.json";
 const profileImg = profileAsset.url;
 

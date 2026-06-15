@@ -41,13 +41,13 @@ export function Navbar() {
             : "bg-white/95 backdrop-blur-md border-background/10"
         }`}
       >
-        <a href="#top" className="flex items-center gap-2.5 pl-1">
+        <Link to="/" className="flex items-center gap-2.5 pl-1">
           <span className="relative h-7 w-7 rounded-lg bg-background flex items-center justify-center text-[11px] font-bold text-white">
             <span className="absolute inset-0 rounded-lg blur-md bg-background/50 -z-10" />
             AM
           </span>
           <span className="font-semibold tracking-tight text-[15px] text-background">AbdulRauf</span>
-        </a>
+        </Link>
 
         <ul className="hidden md:flex items-center gap-1 text-sm">
           {links.map((l) => (
@@ -76,7 +76,7 @@ export function Navbar() {
             href="https://wa.me/923152526525"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-background text-white hover:bg-background/90 transition-colors"
+            className="hidden md:inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-[#25D366] text-white hover:bg-[#1ebe5d] transition-colors"
           >
             <WhatsAppIcon className="h-4 w-4" />
             Chat on WhatsApp

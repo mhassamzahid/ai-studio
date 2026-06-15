@@ -6,6 +6,20 @@ import { Footer } from "@/components/portfolio/Footer";
 import { ProjectCard } from "@/components/portfolio/ProjectCard";
 import { projects } from "@/data/projects";
 
+const floatingStack: { slug: string; x: string; y: string; size: number }[] = [
+  { slug: "openai", x: "6%", y: "8%", size: 64 },
+  { slug: "fastapi", x: "62%", y: "2%", size: 72 },
+  { slug: "postgresql", x: "82%", y: "30%", size: 60 },
+  { slug: "langchain", x: "30%", y: "26%", size: 80 },
+  { slug: "docker", x: "2%", y: "48%", size: 70 },
+  { slug: "n8n", x: "70%", y: "58%", size: 68 },
+  { slug: "redis", x: "44%", y: "62%", size: 58 },
+  { slug: "amazonwebservices", x: "12%", y: "78%", size: 72 },
+  { slug: "pinecone", x: "82%", y: "82%", size: 56 },
+  { slug: "django", x: "50%", y: "88%", size: 60 },
+  { slug: "twilio", x: "26%", y: "4%", size: 52 },
+];
+
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [

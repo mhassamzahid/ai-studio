@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 import { Section } from "./Section";
 
 const socials = [
-  { slug: "linkedin", label: "LinkedIn", href: "#" },
-  { slug: "freelancer", label: "Freelancer", href: "#" },
-  { slug: "facebook", label: "Facebook", href: "#" },
-  { slug: "github", label: "GitHub", href: "#" },
+  { slug: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/abdulrauf-siddiqui/", color: "ffffff" },
+  { slug: "upwork", label: "Upwork", href: "https://www.upwork.com/freelancers/~01d7aeb11a42dfd054" },
+  { slug: "freelancer", label: "Freelancer", href: "https://www.freelancer.pk/u/abdulraufs1" },
+  { slug: "facebook", label: "Facebook", href: "https://www.facebook.com/share/17URSbSNnD/?mibextid=wwXIfr" },
+  { slug: "github", label: "GitHub", href: "https://github.com/AbdulRauf-Sidd", color: "ffffff" },
 ];
 
 export function Socials() {
@@ -31,7 +32,7 @@ export function Socials() {
             className="group relative glass glass-hover h-20 w-20 rounded-2xl flex items-center justify-center"
           >
             <img
-              src={`https://cdn.simpleicons.org/${s.slug}`}
+              src={`https://cdn.simpleicons.org/${s.slug}${s.color ? `/${s.color}` : ""}`}
               alt={s.label}
               loading="lazy"
               className="h-8 w-8 transition-transform group-hover:scale-110"

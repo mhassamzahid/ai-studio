@@ -1,15 +1,21 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle2 } from "lucide-react";
 import { Section } from "./Section";
+import { WhatsAppIcon } from "./WhatsAppIcon";
+
+const WHATSAPP_NUMBER = "923152526525";
 
 export function Contact() {
-  const [sent, setSent] = useState(false);
+  const [email, setEmail] = useState("");
+  const [details, setDetails] = useState("");
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
+    const message = `Hi AbdulRauf,%0A%0AEmail: ${encodeURIComponent(
+      email,
+    )}%0A%0AProject details:%0A${encodeURIComponent(details)}`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -35,6 +41,9 @@ export function Contact() {
             <input
               required
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              maxLength={255}
               placeholder="you@company.com"
               className="w-full bg-input/50 border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/20 transition"
             />
@@ -46,24 +55,19 @@ export function Contact() {
             <textarea
               required
               rows={5}
+              value={details}
+              onChange={(e) => setDetails(e.target.value)}
+              maxLength={1000}
               placeholder="Tell me about the system you want to build..."
               className="w-full bg-input/50 border border-border rounded-xl px-4 py-3 text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/20 transition resize-none"
             />
           </div>
           <button
             type="submit"
-            className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:glow-mint transition-shadow"
+            className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] text-white font-semibold hover:bg-[#1ebe5d] transition-colors"
           >
-            {sent ? (
-              <>
-                <CheckCircle2 className="h-4 w-4" /> Message sent
-              </>
-            ) : (
-              <>
-                Send Message
-                <Send className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </>
-            )}
+            <WhatsAppIcon className="h-5 w-5" />
+            Chat on WhatsApp
           </button>
         </div>
       </motion.form>

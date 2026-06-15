@@ -124,11 +124,14 @@ export function Navbar() {
               ))}
               <li>
                 <a
-                  href="#contact"
+                  href="https://wa.me/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
-                  className="block mt-1 px-4 py-3 rounded-xl text-sm font-medium text-center bg-background text-white"
+                  className="mt-1 px-4 py-3 rounded-xl text-sm font-medium bg-background text-white flex items-center justify-center gap-2"
                 >
-                  Hire me
+                  <WhatsAppIcon className="h-4 w-4" />
+                  Chat on WhatsApp
                 </a>
               </li>
             </ul>

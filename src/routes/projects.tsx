@@ -6,6 +6,20 @@ import { Footer } from "@/components/portfolio/Footer";
 import { ProjectCard } from "@/components/portfolio/ProjectCard";
 import { projects } from "@/data/projects";
 
+const floatingStack: { slug: string; x: string; y: string; size: number }[] = [
+  { slug: "openai", x: "6%", y: "8%", size: 64 },
+  { slug: "fastapi", x: "62%", y: "2%", size: 72 },
+  { slug: "postgresql", x: "82%", y: "30%", size: 60 },
+  { slug: "langchain", x: "30%", y: "26%", size: 80 },
+  { slug: "docker", x: "2%", y: "48%", size: 70 },
+  { slug: "n8n", x: "70%", y: "58%", size: 68 },
+  { slug: "redis", x: "44%", y: "62%", size: 58 },
+  { slug: "amazonwebservices", x: "12%", y: "78%", size: 72 },
+  { slug: "pinecone", x: "82%", y: "82%", size: 56 },
+  { slug: "django", x: "50%", y: "88%", size: 60 },
+  { slug: "twilio", x: "26%", y: "4%", size: 52 },
+];
+
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
@@ -93,41 +107,29 @@ function ProjectsPage() {
             transition={{ duration: 0.9, ease: "easeOut" }}
             className="lg:col-span-5 flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-[440px] aspect-square">
-              <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-primary/40 via-secondary/30 to-transparent blur-2xl" />
-              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-primary to-secondary p-[2px]">
-                <div className="h-full w-full rounded-[1.9rem] bg-background/80 backdrop-blur-xl p-6 flex flex-col justify-between">
-                  <div className="grid grid-cols-2 gap-3 flex-1">
-                    {projects.slice(0, 4).map((p) => (
-                      <div
-                        key={p.title}
-                        className={`relative rounded-2xl overflow-hidden bg-gradient-to-br ${p.gradient} border border-border/50`}
-                      >
-                        <div className="absolute inset-0 grid-bg opacity-40" />
-                        <div className="relative h-full p-3 flex items-end">
-                          <p className="text-[10px] font-medium text-foreground/90 leading-tight line-clamp-2">
-                            {p.title}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-4 grid grid-cols-2 gap-3 text-center">
-                    <div className="glass rounded-xl py-3">
-                      <div className="text-2xl font-bold text-gradient">{projects.length}</div>
-                      <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-0.5">
-                        Projects
-                      </div>
-                    </div>
-                    <div className="glass rounded-xl py-3">
-                      <div className="text-2xl font-bold text-gradient-accent">{stackCount}+</div>
-                      <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-0.5">
-                        Tools used
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="relative w-full max-w-[460px] aspect-square">
+              <div className="absolute inset-8 rounded-full bg-gradient-to-tr from-primary/30 via-secondary/20 to-transparent blur-3xl" />
+              {floatingStack.map((s, idx) => (
+                <motion.div
+                  key={s.slug}
+                  className="absolute glass rounded-2xl p-3 flex items-center justify-center"
+                  style={{ left: s.x, top: s.y, width: s.size, height: s.size }}
+                  initial={{ opacity: 0, scale: 0.6 }}
+                  animate={{ opacity: 1, scale: 1, y: [0, -14, 0] }}
+                  transition={{
+                    opacity: { duration: 0.5, delay: idx * 0.08 },
+                    scale: { duration: 0.5, delay: idx * 0.08 },
+                    y: { duration: 5 + (idx % 4), repeat: Infinity, ease: "easeInOut", delay: idx * 0.3 },
+                  }}
+                >
+                  <img
+                    src={`https://cdn.simpleicons.org/${s.slug}`}
+                    alt={s.slug}
+                    loading="lazy"
+                    className="h-full w-full object-contain"
+                  />
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>

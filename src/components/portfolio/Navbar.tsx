@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { WhatsAppIcon } from "./WhatsAppIcon";
 
 type NavLink = { href: string; label: string; to?: string };
 
@@ -72,10 +73,13 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <a
-            href="#contact"
-            className="hidden md:inline-flex items-center text-sm font-medium px-4 py-2 rounded-full bg-background text-white hover:bg-background/90 transition-colors"
+            href="https://wa.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-background text-white hover:bg-background/90 transition-colors"
           >
-            Hire me
+            <WhatsAppIcon className="h-4 w-4" />
+            Chat on WhatsApp
           </a>
           <button
             aria-label="Toggle menu"
@@ -120,11 +124,14 @@ export function Navbar() {
               ))}
               <li>
                 <a
-                  href="#contact"
+                  href="https://wa.me/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
-                  className="block mt-1 px-4 py-3 rounded-xl text-sm font-medium text-center bg-background text-white"
+                  className="mt-1 px-4 py-3 rounded-xl text-sm font-medium bg-background text-white flex items-center justify-center gap-2"
                 >
-                  Hire me
+                  <WhatsAppIcon className="h-4 w-4" />
+                  Chat on WhatsApp
                 </a>
               </li>
             </ul>

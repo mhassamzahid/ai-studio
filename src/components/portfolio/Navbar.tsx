@@ -1,12 +1,16 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
-const links = [
+type NavLink = { href: string; label: string; to?: string };
+
+const links: NavLink[] = [
+  { href: "/", to: "/", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
   { href: "#stack", label: "Stack" },
-  { href: "#projects", label: "Projects" },
+  { href: "/projects", to: "/projects", label: "Projects" },
   { href: "#reviews", label: "Reviews" },
   { href: "#contact", label: "Contact" },
 ];
@@ -47,12 +51,21 @@ export function Navbar() {
         <ul className="hidden md:flex items-center gap-1 text-sm">
           {links.map((l) => (
             <li key={l.href}>
-              <a
-                href={l.href}
-                className="px-3.5 py-2 rounded-full text-background/70 hover:text-background hover:bg-background/10 transition-colors font-medium"
-              >
-                {l.label}
-              </a>
+              {l.to ? (
+                <Link
+                  to={l.to}
+                  className="px-3.5 py-2 rounded-full text-background/70 hover:text-background hover:bg-background/10 transition-colors font-medium"
+                >
+                  {l.label}
+                </Link>
+              ) : (
+                <a
+                  href={l.href}
+                  className="px-3.5 py-2 rounded-full text-background/70 hover:text-background hover:bg-background/10 transition-colors font-medium"
+                >
+                  {l.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -86,13 +99,23 @@ export function Navbar() {
             <ul className="flex flex-col">
               {links.map((l) => (
                 <li key={l.href}>
-                  <a
-                    href={l.href}
-                    onClick={() => setOpen(false)}
-                    className="block px-4 py-3 rounded-xl text-sm font-medium text-background/70 hover:text-background hover:bg-background/10"
-                  >
-                    {l.label}
-                  </a>
+                  {l.to ? (
+                    <Link
+                      to={l.to}
+                      onClick={() => setOpen(false)}
+                      className="block px-4 py-3 rounded-xl text-sm font-medium text-background/70 hover:text-background hover:bg-background/10"
+                    >
+                      {l.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={l.href}
+                      onClick={() => setOpen(false)}
+                      className="block px-4 py-3 rounded-xl text-sm font-medium text-background/70 hover:text-background hover:bg-background/10"
+                    >
+                      {l.label}
+                    </a>
+                  )}
                 </li>
               ))}
               <li>
